@@ -7,8 +7,19 @@
   <meta name="description"
     content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
   {{ with .Site.Params.author }}
-  <meta name="author" content="{{ . }}">{{ end }}
+  <meta name="author" content="{{ . }}">
+  {{ end }}
   {{ hugo.Generator }}
+
+  {{ "<!-- social -->" | safeHTML }}
+  <meta name="og:url" content="{{ `` | absURL }}">
+  <meta name="og:title" content="{{ .Title }}">
+  <meta name="og:image" content="{{ `images/social/opengraph.png` | absURL }}">
+  <meta name="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+  <meta name="og:locale" content="es_CR">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@psicogamercr" />
+  <meta name="twitter:creator" content="@anaryal" />
 
   {{ "<!-- plugins -->" | safeHTML }}
   {{ range .Site.Params.plugins.css }}
