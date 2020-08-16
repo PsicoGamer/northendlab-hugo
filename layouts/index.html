@@ -108,21 +108,41 @@
 </section>
 <!-- /blog -->
 
-<!-- cta -->
-{{ if .Site.Params.cta.enable }}
+<!-- librec -->
+{{ if .Site.Params.librec.enable }}
 <section class="section pt-0">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
         <div class="row shadow bg-white p-5">
           <div class="col-md-4 text-center text-md-left mb-4 mb-lg-0">
-            <img src="{{ .Site.Params.cta.image | relURL }}" class="mr-4" width="170" alt="..."></div>
+            <img src="{{ .Site.Params.librec.image | relURL }}" class="mr-4" width="170" alt="...">
+          </div>
           <div class="col-md-8 text-center text-md-left">
-            <h3 class="mt-0">{{ .Site.Params.cta.title | markdownify }}</h3>
-            <p>{{ .Site.Params.cta.description | markdownify }}</p>
-            {{ if .Site.Params.cta.button.enable }}
-            <a href="{{ .Site.Params.cta.button.link | absURL }}"
-              class="btn btn-primary">{{ .Site.Params.cta.button.label }}</a>
+            <h3 class="mt-0">Libro recomendado</h3>
+
+            <dl class="row pt-3">
+              <dt class="col-sm-3">Título</dt>
+              <dd class="col-sm-9">{{ .Site.Params.librec.title | markdownify }}</dd>
+
+              <dt class="col-sm-3">Autor</dt>
+              <dd class="col-sm-9">{{ .Site.Params.librec.author | markdownify }}</dd>
+
+              <dt class="col-sm-3">Idioma</dt>
+              <dd class="col-sm-9">{{ .Site.Params.librec.language | markdownify }}</dd>
+
+              <dt class="col-sm-3">Páginas</dt>
+              <dd class="col-sm-9">{{ .Site.Params.librec.pages | markdownify }}</dd>
+
+              <dt class="col-sm-3">Formato</dt>
+              <dd class="col-sm-9">{{ .Site.Params.librec.format | markdownify }}</dd>
+            </dl>
+
+            <p>{{ .Site.Params.librec.description | markdownify }}</p>
+
+            {{ if .Site.Params.librec.button.enable }}
+            <a href="{{ .Site.Params.librec.button.link | absURL }}"
+              class="btn btn-primary" target="_blank">{{ .Site.Params.librec.button.label }}</a>
             {{ end }}
           </div>
         </div>
@@ -131,6 +151,6 @@
   </div>
 </section>
 {{ end }}
-<!-- /cta -->
+<!-- /librec -->
 
 {{ end }}
