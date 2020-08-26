@@ -22,3 +22,14 @@ VERSION:	Versoin Number
 @import 'templates/navigation.scss';
 
 @import 'templates/main.scss';
+
+.content ul.list-inline.social-icon {
+
+    * {
+        margin-bottom: 0px;
+    }
+
+    li.list-inline-item::before {
+        content: none;
+    }
+}
